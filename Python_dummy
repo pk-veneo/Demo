@@ -1,7 +1,7 @@
 import random
 import time
 
-#This an change
+#This an change how this will change
 # Global Constants
 NUMBERS = [random.randint(1, 100) for _ in range(10)]
 WORDS = ["apple", "banana", "cherry", "date", "elderberry"]
