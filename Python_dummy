@@ -1,0 +1,100 @@
+import random
+import time
+
+# Global Constants
+NUMBERS = [random.randint(1, 100) for _ in range(10)]
+WORDS = ["apple", "banana", "cherry", "date", "elderberry"]
+
+# Utility Functions
+def greet(name):
+    print(f"Hello, {name}! Welcome to the dummy Python script.")
+
+def random_word():
+    return random.choice(WORDS)
+
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+# Class Example
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def make_sound(self):
+        print(f"{self.name} says {self.sound}")
+
+# File Handling
+def write_to_file(filename, content):
+    with open(filename, "w") as file:
+        file.write(content)
+
+# Main Logic
+def process_numbers():
+    squared = [num ** 2 for num in NUMBERS]
+    print("Original Numbers:", NUMBERS)
+    print("Squared Numbers:", squared)
+
+def read_file(filename):
+    try:
+        with open(filename, "r") as file:
+            return file.read()
+    except FileNotFoundError:
+        return "File not found!"
+
+# Dictionary Example
+user_data = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+
+def update_user_age(new_age):
+    user_data["age"] = new_age
+
+# Loop Example
+def countdown(n):
+    while n > 0:
+        print(n)
+        time.sleep(0.5)
+        n -= 1
+    print("Time's up!")
+
+# Using Functions & Classes
+if __name__ == "__main__":
+    greet("User")
+    
+    # Random word selection
+    word = random_word()
+    print(f"Random word chosen: {word}")
+
+    # Factorial Calculation
+    num = 5
+    print(f"Factorial of {num} is {factorial(num)}")
+
+    # Using Class
+    dog = Animal("Dog", "Woof!")
+    cat = Animal("Cat", "Meow!")
+    dog.make_sound()
+    cat.make_sound()
+
+    # Writing to file
+    write_to_file("sample.txt", "This is a test file written by Python.")
+    print("File written successfully!")
+
+    # Reading file
+    content = read_file("sample.txt")
+    print(f"File content: {content}")
+
+    # Processing Numbers
+    process_numbers()
+
+    # Updating Dictionary
+    print(f"User before update: {user_data}")
+    update_user_age(35)
+    print(f"User after update: {user_data}")
+
+    # Countdown Example
+    countdown(5)
